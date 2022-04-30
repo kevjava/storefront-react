@@ -22,9 +22,16 @@ export function Header() {
                     <li className="flex-1 mx-1">
                         <Link to="/">Home</Link>
                     </li>
-                    <li className="flex-1 mx-1">
-                        <Link to="/secured">Secured</Link>
-                    </li>
+                    {keycloak.authenticated &&
+                        <li className="flex-1 mx-1">
+                            <Link to="/secured">Secured</Link>
+                        </li>
+                    }
+                    {keycloak.hasRealmRole('vendor') &&
+                        <li className="flex-1 mx-1">
+                            <Link to="/vendor">Vendor</Link>
+                        </li>
+                    }
                 </ul>
             </nav>
             {!keycloak.authenticated &&
