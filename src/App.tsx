@@ -1,16 +1,8 @@
 import React, {FC} from 'react';
 import {Header} from "./Header";
-import {BrowserRouter, Outlet, Route, Navigate, RouteProps, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Outlet, Route, RouteProps, Routes} from "react-router-dom";
 import {useKeycloak} from "@react-keycloak/web";
-
-function DefaultPage() {
-    return (
-        <>
-            <Header/>
-            <h1>Default Page!</h1>
-        </>
-    );
-}
+import {DefaultPage} from "./components/DefaultPage";
 
 function SecuredPage() {
     return (
